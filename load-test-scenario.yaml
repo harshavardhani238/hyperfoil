@@ -20,8 +20,8 @@ spec:
     rampUp: 5s
     duration: 1m
   output:
-    type: file
-    directory: /load-test/output/
+    type: console
+    endpoint: https://pv-testing-logs1-sample.apps.ocp4.ocpztp.com
   resources:
     limits:
       cpu: "1"

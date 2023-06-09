@@ -1,0 +1,29 @@
+apiVersion: hyperfoil.io/v1alpha2
+kind: Hyperfoil
+metadata:
+  name: load-test-scenario
+spec:
+  scenario: |
+    scenario {
+      defaultHttp {
+        httpGet("/") {
+          address("https://pv-testing-logs-sample.apps.ocp4.ocpztp.com")
+        }
+      }
+      constantRate(50, 5s)
+      duration(1m)
+    }
+  workload:
+    targets:
+    - https://pv-testing-logs-sample.apps.ocp4.ocpztp.com
+    concurrency: 50
+    rampUp: 5s
+    duration: 1m
+  output:
+    type: file
+    directory: /load-test/output/
+  resources:
+    limits:
+      cpu: "1"
+      memory: "1Gi"
+  sslVerify: false

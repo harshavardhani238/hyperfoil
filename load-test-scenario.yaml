@@ -22,8 +22,3 @@ spec:
   output:
     type: console
     endpoint: https://pv-testing-logs1-sample.apps.ocp4.ocpztp.com
-  resources:
-    limits:
-      cpu: "1"
-      memory: "1Gi"
-  sslVerify: false

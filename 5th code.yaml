@@ -1,0 +1,34 @@
+class FeeConcession:
+    def __init__(self):
+        self.concession_name = ""
+        self.concession_type = ""
+        self.installment = ""
+        self.fee_category = ""
+    
+    def configure_concession(self, name, concession_type, installment, fee_category):
+        self.concession_name = name
+        self.concession_type = concession_type
+        self.installment = installment
+        self.fee_category = fee_category
+    
+    def configure_fee_installment(self, installment, date_from, date_to, due_date, amount):
+        self.installment = installment
+        self.date_from = date_from
+        self.date_to = date_to
+        self.due_date = due_date
+        self.amount = amount
+
+# Usage example
+fee_concession = FeeConcession()
+
+# Configure Fee Concession
+fee_concession.configure_concession("Concession 1", "Amount", "Installment 1", "Fee Category 1")
+
+# Configure Fee Installment
+fee_concession.configure_fee_installment("Installment 1", "2023-06-01", "2023-12-31", "2023-07-15", 500)
+
+# Accessing configured values
+print(fee_concession.concession_name)  # Output: Concession 1
+print(fee_concession.installment)  # Output: Installment 1
+print(fee_concession.amount)  # Output: 500
+

@@ -1,0 +1,31 @@
+class FeeInstallment:
+    def __init__(self):
+        self.academic_year = None
+        self.installment_type = None
+        self.installment_name = None
+        self.date_from = None
+        self.date_to = None
+        self.due_date = None
+    
+    def configure_installment_details(self):
+        self.academic_year = input("Academic Year: ")
+        self.installment_type = input("Type (FMS05-CR02): ")
+        self.installment_name = input("Installment Name: ")
+        
+        self.configure_installment_tab()
+        print("Fee Installment details configured successfully.")
+    
+    def configure_installment_tab(self):
+        self.installment_name = input("Installment Name: ")
+        self.date_from = input("Date From (yyyy-mm-dd): ")
+        self.date_to = input("Date To (yyyy-mm-dd): ")
+        self.due_date = input("Due Date (yyyy-mm-dd): ")
+        
+    def save_installment_details(self):
+        # Implement logic to save Fee Installment details in the database
+        pass
+
+# Usage example
+fee_installment = FeeInstallment()
+fee_installment.configure_installment_details()
+fee_installment.save_installment_details()
